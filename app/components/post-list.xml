@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://schemas.nativescript.org/tns.xsd" 
+         items="{{ posts }}" 
+         height="100%" 
+         separatorColor="#e1e1e1">
+    <ListView.itemTemplate>
+        <GridLayout rows="auto, auto" columns="*" class="p-4 border-b border-gray-200">
+            <Label row="0" text="{{ content }}" textWrap="true" class="text-lg" />
+            <GridLayout row="1" columns="auto, *, auto" class="mt-2">
+                <Label col="0" text="{{ platform }}" class="text-sm text-gray-600" />
+                <Label col="1" text="{{ formatDate(scheduledDate) }}" class="text-sm text-gray-500 ml-2" />
+                <Label col="2" text="{{ status }}" 
+                       class="{{ status === 'scheduled' ? 'text-blue-500' : status === 'posted' ? 'text-green-500' : 'text-red-500' }}" />
+            </GridLayout>
+        </GridLayout>
+    </ListView.itemTemplate>
+</ListView>

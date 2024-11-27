@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      navigatingTo="onNavigatingTo"
+      xmlns:components="components">
+    <ActionBar title="Social Media Scheduler" class="action-bar" />
+    
+    <StackLayout class="p-4">
+        <components:post-form />
+        <components:post-list />
+    </StackLayout>
+</Page>

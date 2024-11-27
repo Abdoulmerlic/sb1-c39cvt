@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StackLayout xmlns="http://schemas.nativescript.org/tns.xsd">
+    <TextView hint="What's on your mind?" text="{{ newPostContent }}" 
+              class="post-input" height="100" editable="{{ !isLoading }}" />
+    
+    <GridLayout columns="*, *" rows="auto" class="m-2">
+        <DateTimePicker row="0" col="0" date="{{ selectedDate }}" 
+                       enabled="{{ !isLoading }}" />
+        <DropDown row="0" col="1" 
+                 items="{{ platformOptions }}" 
+                 selectedIndex="{{ platformIndex }}"
+                 enabled="{{ !isLoading }}" />
+    </GridLayout>
+
+    <Button text="{{ isLoading ? 'Posting...' : 'Schedule Post' }}" 
+            tap="{{ schedulePost }}" 
+            class="schedule-button"
+            isEnabled="{{ !isLoading }}" />
+</StackLayout>
